@@ -42,6 +42,11 @@ defmodule Kino.Output do
   @type image :: {:image, content :: binary(), mime_type :: binary()}
 
   @typedoc """
+  HTML content.
+  """
+  @type html :: {:html, content :: binary()}
+
+  @typedoc """
   [Vega-Lite](https://vega.github.io/vega-lite) graphic.
 
   `spec` should be a valid Vega-Lite specification, essentially
@@ -156,6 +161,14 @@ defmodule Kino.Output do
   @spec image(binary(), binary()) :: t()
   def image(content, mime_type) when is_binary(content) and is_binary(mime_type) do
     {:image, content, mime_type}
+  end
+
+  @doc """
+  See `t:html/0`.
+  """
+  @spec html(binary()) :: t()
+  def html(content) when is_binary(content) do
+    {:html, content}
   end
 
   @doc """
