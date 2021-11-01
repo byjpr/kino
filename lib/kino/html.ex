@@ -19,7 +19,7 @@ defmodule Kino.HTML do
   Wraps the given binary content into the html struct.
   """
   @spec new(binary()) :: t()
-  def new(content, type) do
+  def new(content) do
     %__MODULE__{content: content}
   end
 end

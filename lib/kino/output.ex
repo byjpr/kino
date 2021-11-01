@@ -12,6 +12,7 @@ defmodule Kino.Output do
           | text_block()
           | markdown()
           | image()
+          | html()
           | vega_lite_static()
           | vega_lite_dynamic()
           | table_dynamic()

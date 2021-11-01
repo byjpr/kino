@@ -46,7 +46,7 @@ end
 
 defimpl Kino.Render, for: Kino.HTML do
   def to_livebook(html) do
-    Kino.Output.html(html)
+    Kino.Output.html(html.content)
   end
 end
 
